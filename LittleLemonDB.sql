@@ -44,6 +44,7 @@ CREATE TABLE `bookings` (
 
 LOCK TABLES `bookings` WRITE;
 /*!40000 ALTER TABLE `bookings` DISABLE KEYS */;
+INSERT INTO `bookings` VALUES (1,'2023-04-12',5,2,1),(2,'2023-04-13',3,1,3),(3,'2023-04-12',2,1,2),(4,'2023-04-12',2,1,1),(12,'2030-04-12',3,1,2);
 /*!40000 ALTER TABLE `bookings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -68,6 +69,7 @@ CREATE TABLE `customers` (
 
 LOCK TABLES `customers` WRITE;
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
+INSERT INTO `customers` VALUES (1,'Vanessa Hernandez','8326248997'),(2,'Katie Watkins','7546248997'),(3,'Martha Salazar','2147296740');
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -80,10 +82,8 @@ DROP TABLE IF EXISTS `menuitems`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `menuitems` (
   `MenuitemsID` int NOT NULL,
-  `StarterName` varchar(255) DEFAULT NULL,
-  `CourseName` varchar(255) DEFAULT NULL,
-  `DrinkName` varchar(255) DEFAULT NULL,
-  `DessertName` varchar(255) DEFAULT NULL,
+  `Name` varchar(255) DEFAULT NULL,
+  `Type` varchar(255) DEFAULT NULL,
   `Price` decimal(10,0) DEFAULT NULL,
   PRIMARY KEY (`MenuitemsID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
@@ -95,6 +95,7 @@ CREATE TABLE `menuitems` (
 
 LOCK TABLES `menuitems` WRITE;
 /*!40000 ALTER TABLE `menuitems` DISABLE KEYS */;
+INSERT INTO `menuitems` VALUES (1,'Olives','Starters',5),(2,'Flatbread','Starters',5),(3,'Minestrone','Starters',8),(4,'Tomato bread','Starters',8),(5,'Falafel','Starters',7),(6,'Hummus','Starters',5),(7,'Greek salad','Main Courses',15),(8,'Bean soup','Main Courses',12),(9,'Pizza','Main Courses',15),(10,'Greek yoghurt','Desserts',7),(11,'Ice cream','Desserts',6),(12,'Cheesecake','Desserts',4),(13,'Athens White wine','Drinks',25),(14,'Corfu Red Wine','Drinks',30),(15,'Turkish Coffee','Drinks',10),(16,'Turkish Coffee','Drinks',10),(17,'Kabasa','Main Courses',17);
 /*!40000 ALTER TABLE `menuitems` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -122,6 +123,7 @@ CREATE TABLE `menus` (
 
 LOCK TABLES `menus` WRITE;
 /*!40000 ALTER TABLE `menus` DISABLE KEYS */;
+INSERT INTO `menus` VALUES (1,'Greek','Lunch',1),(2,'Greek','Lunch',7),(3,'Greek','Lunch',10),(4,'Greek','Lunch',13),(5,'Italian','Lunch',3),(6,'Italian','Lunch',9),(7,'Italian','Lunch',12),(8,'Italian','Lunch',15),(9,'Turkish','Lunch',5),(10,'Turkish','Lunch',17),(11,'Turkish','Lunch',11),(12,'Turkish','Lunch',16);
 /*!40000 ALTER TABLE `menus` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -136,7 +138,6 @@ CREATE TABLE `orderdeliverystatus` (
   `OrderDeliveryID` int NOT NULL,
   `Status` varchar(50) DEFAULT NULL,
   `DeliveryDate` date DEFAULT NULL,
-  `OrderDeliveryStatus` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`OrderDeliveryID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -147,6 +148,7 @@ CREATE TABLE `orderdeliverystatus` (
 
 LOCK TABLES `orderdeliverystatus` WRITE;
 /*!40000 ALTER TABLE `orderdeliverystatus` DISABLE KEYS */;
+INSERT INTO `orderdeliverystatus` VALUES (1,'in progress','2012-05-23'),(2,'in progress','2012-05-23'),(3,'in progress','2012-05-23'),(4,'in progress','2012-05-24'),(5,'in progress','2012-05-24'),(6,'in progress','2012-05-24'),(7,'done','2012-05-24'),(8,'done','2012-05-24'),(9,'done','2012-05-26'),(10,'done','2012-05-26'),(11,'done','2012-05-26'),(12,'done','2012-05-26');
 /*!40000 ALTER TABLE `orderdeliverystatus` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -184,6 +186,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (1,'2012-05-23',86,2,1,1,1,1),(2,'2012-05-24',37,1,2,2,2,2),(3,'2012-05-26',37,1,3,3,3,2),(4,'2012-06-28',40,1,1,1,4,3),(5,'2012-06-29',150,5,2,2,5,1);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -223,6 +226,7 @@ CREATE TABLE `staff` (
 
 LOCK TABLES `staff` WRITE;
 /*!40000 ALTER TABLE `staff` DISABLE KEYS */;
+INSERT INTO `staff` VALUES (1,'Hilary Duff','waitress',50000),(2,'Jeff McDonal','waiter',51000),(3,'Brad Cortazzo','cheff',55000);
 /*!40000 ALTER TABLE `staff` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -253,4 +257,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-12  7:34:25
+-- Dump completed on 2023-04-13 19:35:51
